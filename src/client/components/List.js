@@ -6,6 +6,11 @@ import Panel from 'muicss/lib/react/panel';
 //components
 import { RemoveBtn } from './Remove.js';
 
+const divStyle = {
+  margin: '10px'
+};
+
+
 export class TaskList extends React.Component{
 
   constructor(props) {
@@ -27,12 +32,14 @@ export class TaskList extends React.Component{
 
   render(){
     return(
-		<Panel>
-        <h1>List</h1>
-        {this.state.tasksList.map(function(object, i){
-            return <div key={i}>{object} <RemoveBtn removeItem={object}/><Divider /></div>;
-        })}
-		</Panel>
+      <div style={divStyle}>
+    		<Panel>
+            <h1>List</h1>
+            {this.state.tasksList.map(function(object, i){
+                return <div key={i}>{object} <RemoveBtn removeItem={object}/><Divider /></div>;
+            })}
+    		</Panel>
+      </div>
     );
   }
 }

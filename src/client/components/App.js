@@ -9,18 +9,27 @@ import { MdSpa } from 'react-icons/md';
 import { AddForm } from './Add.js';
 import { TaskList } from './List.js';
 
+const divStyle = {
+  padding: '3px',
+  fontSize: '50px'
+};
+
 export class AppContainer extends React.Component{
   render(){
     return(
 		<div>
 			<Appbar>
-			   <h1><MdSpa /> <span>TODO List</span></h1>
+			   <div style={divStyle}><MdSpa /> <span>TODO List</span></div>
 			</Appbar>
 			<Row>
-			  <Col md="4"><AddForm/></Col>
-        <Col md="8">
-          <TaskList/>
-			  </Col>
+        <Col md="2"></Col>
+			  <Col md="8"><AddForm/></Col>
+        <Col md="2"></Col>
+      </Row>
+      <Row>
+      <Col md="2"></Col>
+      <Col md="8"><TaskList/></Col>
+      <Col md="2"></Col>
       </Row>
 		</div>
 
